@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
-    "deploy":"gh-pages -d dist"
+    "deploy":"gh-pages -d app"
   },
   "author": "",
   "license": "ISC",
