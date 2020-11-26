@@ -5,10 +5,12 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "deploy":"gh-pages -d dist"
   },
   "author": "",
   "license": "ISC",
+  "homepage": "http://dqt.github.io/mywebsite",
   "dependencies": {
     "body-parser": "^1.19.0",
     "connect-flash": "^0.1.1",
