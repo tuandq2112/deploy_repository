@@ -10,7 +10,7 @@
   },
   "author": "",
   "license": "ISC",
-  "homepage": "http://dqt.github.io/mywebsite",
+  "homepage": "http://doquoctuan21121999.github.io/mywebsite",
   "dependencies": {
     "body-parser": "^1.19.0",
     "connect-flash": "^0.1.1",
