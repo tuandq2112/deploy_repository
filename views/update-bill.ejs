@@ -1,0 +1,111 @@
+<head>
+  <title>Title</title>
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  />
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <a href="/home">
+      <h3>Home page</h3>
+    </a>
+    <h2>UPDATE BILL</h2>
+
+    <form action="/<%= bill._id %>" method="POST">
+      <div class="form-group">
+        <label>Room name</label>
+        <input
+          class="form-control"
+          type="text"
+          name="roomName3"
+          value="<%= bill.roomName %>"
+          readonly
+        />
+      </div>
+      <div class="form-group">
+        <label>User name</label>
+        <input
+          class="form-control"
+          type="text"
+          name="userName3"
+          value="<%= bill.userName %>"
+        />
+      </div>
+      <div class="form-group">
+        <label>Electricity bill</label>
+        <input
+          class="form-control"
+          type="text"
+          name="Electricity_bill3"
+          value="<%= bill.Electricity_bill %>"
+        />
+      </div>
+      <div class="form-group">
+        <label>Water bill</label>
+        <input
+          class="form-control"
+          type="text"
+          name="Water_bill3"
+          value="<%= bill.Water_bill %>"
+        />
+      </div>
+      <div class="form-group">
+        <label>Room bill</label>
+        <input
+          class="form-control"
+          type="text"
+          name="Room_bill3"
+          value="<%= bill.Room_bill %>"
+        />
+      </div>
+      <div class="form-group">
+        <label>Total</label>
+        <input
+          class="form-control"
+          type="text"
+          name="total3"
+          value="<%= bill.total %>"
+        />
+      </div>
+      <label for="Status3">STATUS</label>
+      <select id="Status3" class="form-control" name="Status3">
+        <option value="Empty" name="Empty">Empty</option>
+        <option value="Full" name="Full">Full</option>
+      </select>
+
+      <label for="pay3">PAY</label>
+      <select id="pay3" class="form-control" name="pay3">
+        <option value="Paid" name="Paid">Paid</option>
+        <option value="Unpaid" name="Unpaid">Unpaid</option>
+      </select>
+      <br />
+      <input
+        id="update-btn"
+        class="btn btn-primary"
+        type="submit"
+        value="SAVE"
+      />
+      <input
+        id="update-btn"
+        class="btn btn-secondary"
+        type="button"
+        value="DELETE"
+        onclick="handleDeleteBill('<%= bill._id %>')"
+      />
+    </form>
+  </div>
+  <script>
+    function handleDeleteBill(value) {
+      $.ajax({
+        url: "/" + value,
+        type: "DELETE",
+        success: function (result) {
+          $(location).attr("href", "/home");
+        },
+      });
+    }
+  </script>
+</body>

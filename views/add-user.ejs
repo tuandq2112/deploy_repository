@@ -1,0 +1,42 @@
+<head>
+  <title>Title</title>
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  />
+</head>
+
+<body>
+  <div class="container">
+    <a href="/home"><h3>Home page</h3></a>
+    <h2>ADD USER</h2>
+    <form action="/add-user" method="POST">
+      <div class="form-group">
+        <label>USER NAME</label>
+        <input class="form-control" type="text" name="userName2" />
+      </div>
+      <div class="form-group">
+        <label>AGE</label>
+        <input class="form-control" type="text" name="userAge2" />
+      </div>
+      <div class="form-group">
+        <label>ADDRESS</label>
+        <input class="form-control" type="text" name="userAddress2" />
+      </div>
+      <div class="form-group">
+        <label>ID CARD NUMBER</label>
+        <input class="form-control" type="text" name="idCardNumber2" />
+      </div>
+      <div class="form-group">
+        <label>PHONE ADDRESS</label>
+        <input class="form-control" type="text" name="phoneAddress2" />
+      </div>
+      <input
+        id="add-btn"
+        class="btn btn-primary"
+        type="submit"
+        value="ADD USER"
+      />
+    </form>
+  </div>
+</body>

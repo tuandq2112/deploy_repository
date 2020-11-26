@@ -1,0 +1,69 @@
+<html>
+  <head>
+    <title>Home page</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <h2>ROOM MANAGEMENT</h2>
+      <div class="search-container">
+        <form action="/home">
+          <input type="text" placeholder="Search.." name="search" />
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+
+      <a href="/add-user" class="btn btn-success float-right">Add user</a>
+      <a href="/add-bill" class="btn btn-success float-right">Add bill</a>
+      <form action="/home" method="get">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Month</th>
+              <th>Room name</th>
+              <th>User name</th>
+              <th>Electricity bill</th>
+              <th>Water bill</th>
+              <th>Room bill</th>
+              <th>Total</th>
+              <th>Status</th>
+              <th>Pay</th>
+            </tr>
+          </thead>
+          <% bills.forEach((entry) => { %>
+          <tr ondblclick="handleUpdateBill('<%= entry.id %>')" disabled>
+            <td><%= entry.addDate %></td>
+            <td><%= entry.roomName %></td>
+            <td><%= entry.userName %></td>
+            <td><%= entry.Electricity_bill %></td>
+            <td><%= entry.Water_bill %></td>
+            <td><%= entry.Room_bill %></td>
+            <td><%= entry.total %></td>
+            <td><%= entry.status %></td>
+            <td><%= entry.pay %></td>
+            <td>
+              <input
+                class="btn btn-primary"
+                type="button"
+                value="Update"
+                onclick="handleUpdateBill('<%= entry.id %>')"
+              />
+            </td>
+          </tr>
+          <% }) %>
+        </table>
+      </form>
+
+      <script>
+        function handleUpdateBill(value) {
+          $(location).attr("href", "/update-bill/" + value);
+        }
+      </script>
+    </div>
+  </body>
+</html>
