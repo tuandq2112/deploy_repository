@@ -5,7 +5,9 @@ var User = require("./../db/models/user");
 var Room = require("./../db/models/room");
 var Login = require("./../db/models/login");
 
-/**
+/**\
+ * 
+ * 
  * Home page: loading all bill
  */
 router.get("/", (req, res) => {
